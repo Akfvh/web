@@ -5,4 +5,4 @@
 <br><br>
 
 ### LIST
-1. [Simple Calculator]("https://github.com/Akfvh/web/tree/master/calculator")
+1. [Simple Calculator](https://github.com/Akfvh/web/tree/master/calculator)
