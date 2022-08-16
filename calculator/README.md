@@ -8,12 +8,19 @@
 ## Features
 - 간단한 사칙연산
 - operation(+. -, *, %)클릭 시 그 전까지의 내용이 새로 입력할 내용과 분리
-![calc_separation](images/calc_2.png) "123+456 입력 시 화면"
+- (추가): 계산 ('=') 후 새로 숫자 패널이 클릭될 때  
+기존: 계산 결과에 append됨  
+수정: 스크린 초기화  
+
+![calc_separation](images/calc_2.png)  
+"123+456 입력 시 화면"
+
 
 ## To-Do
 - **line-by-line 주석 추가**
 - html, css 활용, 외관 변형
-- javascript 활용, 계산/출력 방식 수정 및 추가
+- javascript 활용, 계산/출력 방식 수정 및 추가  
+    - 2022/08/16 출력 방식 수정
 <br><br>
 
 ## 느낀 점
