@@ -1,12 +1,14 @@
 class Calculator{
     //constructor
-    constructor(previousOperandTextElement, currentOperandTextElement){
-        this.previousOperandTextElement = previousOperandTextElement
+    constructor(previousOperandTextElement, currentOperandTextElement){ 
+        this.computed = false       // added: for clearing after computation
+        this.previousOperandTextElement = previousOperandTextElement    // member var declarations, by constructor parameter
         this.currentOperandTextElement = currentOperandTextElement
-        this.clear()
+        this.clear()              // clear screen
     }
 
     clear(){
+        // sets both operands to '', and reset operation
         this.currentOperand = ''
         this.previousOperand = ''
         this.operation = undefined
@@ -16,9 +18,14 @@ class Calculator{
         this.currentOperand = this.currentOperand.toString().slice(0, -1)
     }
 
-    appendNumber(number){
+    appendNumber(number){     
+        if(this.computed == true){
+            this.clear()
+            this.computed = false
+        }
+
         if (number == '.' && this.currentOperand.includes('.')) return  //prevent multiple period
-        this.currentOperand = this.currentOperand.toString().toString() + number.toString()
+        this.currentOperand = this.currentOperand.toString() + number.toString()    // append the parameter to existing currOperand
     }
 
     chooseOperation(operation){
@@ -35,7 +42,7 @@ class Calculator{
 
     compute(){
         let computation
-        const prev = parseFloat(this.previousOperand)
+        const prev = parseFloat(this.previousOperand)   //conversion to a floating point number
         const curr = parseFloat(this.currentOperand)
         if(isNaN(prev) || isNaN(curr)) return   // 'Not_A_Number'
         switch(this.operation){
@@ -57,6 +64,7 @@ class Calculator{
         this.currentOperand = computation
         this.operation = undefined
         this.previousOperand = ''
+        this.computed = true
     }
 
     getDisplayNumber(number){
@@ -71,7 +79,7 @@ class Calculator{
         if(isNaN(intDigits)){
             integerDisplay = ''
         }else{
-            integerDisplay = intDigits.toLocaleString('en', 
+            integerDisplay = intDigits.toLocaleString('en',     // for ',' every 1000
             {maximumFractionDigits: 0})
         }
 
@@ -99,6 +107,8 @@ class Calculator{
     }
 }
 
+/* 'document.querySelector' returns the first matching selector in the document */
+/* 'document.querySelectorAll' returns the nodeList of matching selectors in the document */
 const numberButtons = document.querySelectorAll('[data-number]')
 const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
@@ -107,12 +117,13 @@ const acButton = document.querySelector('[data-ac]')
 const previousOperandTextElement = document.querySelector('[data-prev-operand]')
 const currentOperandTextElement = document.querySelector('[data-curr-operand]')
 
-const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement) //define a class
+const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement) //declare an instance
 
-numberButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.appendNumber(button.innerText)
-        calculator.updateDisplay()  //update everytime the button is clicked
+/* addEventlistener('type', 'listener') */
+numberButtons.forEach(button => {                   // for all number buttons
+    button.addEventListener('click', () => {        // catch event 'click'
+        calculator.appendNumber(button.innerText)   // action: appendNumber the text inside the button
+        calculator.updateDisplay()                  //       : update display
     })
 })
 
@@ -123,17 +134,17 @@ operationButtons.forEach(button => {
     })
 })
 
-equalsButton.addEventListener('click', button => {
+equalsButton.addEventListener('click', () => {
     calculator.compute()
     calculator.updateDisplay()
 })
 
-acButton.addEventListener('click', button => {
+acButton.addEventListener('click', () => {
     calculator.clear()
     calculator.updateDisplay()
 })
 
-deleteButton.addEventListener('click', button => {
+deleteButton.addEventListener('click', () => {
     calculator.delete()
     calculator.updateDisplay()
 })
