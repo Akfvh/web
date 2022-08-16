@@ -1,7 +1,7 @@
 class Calculator{
     //constructor
     constructor(previousOperandTextElement, currentOperandTextElement){ 
-        this.computed = false       // added: for clearing after computation
+        this.computed = false       // revised: for clearing after computation - 22/08/16
         this.previousOperandTextElement = previousOperandTextElement    // member var declarations, by constructor parameter
         this.currentOperandTextElement = currentOperandTextElement
         this.clear()              // clear screen
@@ -64,7 +64,6 @@ class Calculator{
         this.currentOperand = computation
         this.operation = undefined
         this.previousOperand = ''
-        this.computed = true
     }
 
     getDisplayNumber(number){
@@ -135,6 +134,7 @@ operationButtons.forEach(button => {
 })
 
 equalsButton.addEventListener('click', () => {
+    calculator.computed = true
     calculator.compute()
     calculator.updateDisplay()
 })
