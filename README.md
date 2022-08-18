@@ -6,3 +6,11 @@
 
 ### LIST
 1. [Simple Calculator](https://github.com/Akfvh/web/tree/master/calculator)
+2. [Memory Game](https://github.com/Akfvh/web/tree/master/memoryGame)  
+
+<br><br>  
+
+
+### 환경
+- windows 10, wsl2: Ubuntu, vscode
+- live server, firefox
