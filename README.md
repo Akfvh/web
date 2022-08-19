@@ -7,7 +7,7 @@
 ### LIST
 1. [Simple Calculator](https://github.com/Akfvh/web/tree/master/calculator)
 2. [Memory Game](https://github.com/Akfvh/web/tree/master/memoryGame)  
-
+3. [Whac-a-Mole](https://github.com/Akfvh/web/tree/master/whac-a-mole)
 <br><br>  
 
 
