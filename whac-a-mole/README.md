@@ -5,12 +5,11 @@
 - 클릭시 점수 +1
 - 타이머 끝날 시 alert, 최종 점수 표시
 <div class="video container">
-    <video width="500" controls="true" autoplay muted>
-        <source src="media/exec_video.mp4" type="video/mp4">
-    </video>
+    <video src="media/exec_video.mp4" style="width:500px" controls="true" loop autoplay muted></video>
 </div>  
 
 <div class="img container">
+    <img src="media/img_exec.png" style="width:500px;">
     <img src="media/img_alert.png" style="width:500px;">
 </div>  
 

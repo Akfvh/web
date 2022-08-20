@@ -8,12 +8,22 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>your score:</h2>
-    <h2 id="score">0</h2>
+    <!-- game information -->
+    <div class="desc">
+        <div class="description">
+            <h1><b>WHAC-A-MOLE!</b></h1>
+            <h2>Score: <span id="score">0</span></h2>
+            <h2>Time Left: <span id="time-left">30</span></h2>
+        </div>
 
-    <h2>time left:</h2>
-    <h2 id="time-left">60</h2>
+    <!-- start button -->
+        <div class="start-button">
+            <h3>Press START to play!</h3>
+            <button class="button">START</button>
+        </div>
+    </div>
 
+    <!-- game grid -->
     <div class="grid"> 
         <div class="square" id="1"></div>
         <div class="square" id="2"></div>

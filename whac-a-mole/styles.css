@@ -1,17 +1,49 @@
 .grid{
+    /* grid made by flex */
     width: 606px;
     height: 606px;
     display: flex;
     flex-wrap: wrap;
 }
-
 .square{
+    /* each square attr */
     height: 200px;
     width: 200px;
     border: 1px solid black;
 }
-
+.square:hover{
+    /* when mouse is over the square */
+    border-color: red;
+}
+.square:active{
+    /* when a square is clicked */
+    background-color: rgba(255, 0, 0, 0.3);
+} 
 .mole{
+    /* when mole is made in a square */
     background-image: url('media/diglett.png');
     background-size: cover;
+}
+.desc{
+    /* game information box */
+    display: grid;
+    border: black solid 2px;
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 3px;
+    width: 606px;
+    height: 200px;
+    grid-template-columns: 303px 303px;
+}
+.start-button{
+    /* start button section */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    /* the start button */
+    width: 200px;
+    height: 80px;
 }
