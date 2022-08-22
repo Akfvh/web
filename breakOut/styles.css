@@ -1,0 +1,38 @@
+.grid{
+    background-color: black;
+    position: absolute;
+    width: 560px;
+    height: 300px;
+    border: solid black 1px;
+    margin-top: 80px;
+}
+.block{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: beige;
+    border: solid black 1px;
+}
+.user{
+    display: grid;
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    border-radius: 100px;
+    background-color: lightskyblue;
+    grid-template-columns: repeat(5, 1fr);
+}
+.ball{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: lightcoral;
+}
+
+.zone:nth-child(1){
+    background-color: red
+}
+.zone:nth-child(5){
+    background-color: red
+}
